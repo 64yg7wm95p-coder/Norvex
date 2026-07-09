@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>NORVEX Premium Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f7f5f0 0%, #ebecee 100%);
+            color: #212529;
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #2d3138 0%, #1e2126 100%);
+            border-bottom: 3px solid #bc9f77;
+        }
+
+        .navbar-brand {
+            color: #f7f5f0 !important;
+        }
+
+        .card {
+            background-color: #ffffff !important;
+            border: 1px solid #e2e4e8 !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+        }
+
+        h5 {
+            color: #2d3138 !important;
+        }
+
+        label {
+            color: #495057 !important;
+        }
+
+        .text-dark-custom {
+            color: #212529 !important;
+        }
+
+        .text-muted-custom {
+            color: #6c757d !important;
+        }
+
+        .text-ai-green {
+            color: #1f6e43 !important;
+        }
+
+        .text-beige-premium {
+            color: #9c8059 !important;
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #cbb596 0%, #b29771 100%);
+            color: #ffffff !important;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium:hover {
+            background: linear-gradient(135deg, #b29771 0%, #987d57 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(178, 151, 113, 0.3);
+        }
+
+        .btn-premium:disabled {
+            background: #d6d8db;
+            color: #868e96 !important;
+        }
+
+        .btn-outline-premium {
+            color: #9c8059 !important;
+            border-color: #b29771 !important;
+            background: transparent;
+        }
+
+        .btn-outline-premium:hover {
+            background-color: rgba(178, 151, 113, 0.1) !important;
+            color: #796140 !important;
+            border-color: #9c8059 !important;
+        }
+
+        .table {
+            color: #212529 !important;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa !important;
+        }
+
+        .table-light {
+            background-color: #f1f3f5 !important;
+            color: #2d3138 !important;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table th {
+            color: #2d3138 !important;
+            border-color: #dee2e6 !important;
+        }
+
+        .table td {
+            border-color: #e9ecef !important;
+        }
+
+        .form-control {
+            background-color: #ffffff !important;
+            border: 1px solid #ced4da !important;
+            color: #212529 !important;
+        }
+
+        .form-control:focus {
+            border-color: #b29771 !important;
+            box-shadow: 0 0 0 0.25rem rgba(178, 151, 113, 0.15) !important;
+        }
+
+        .img-container {
+            width: 55px;
+            height: 55px;
+            display: block;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            background-color: #ffffff;
+        }
+
+        .product-thumb {
+            width: 55px !important;
+            height: 55px !important;
+            object-fit: cover;
+            display: block;
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 10px;
+            background-color: #e9ecef;
+        }
+
+        .progress-bar-error {
+            background: linear-gradient(90deg, #ea868f 0%, #dc3545 100%) !important;
+        }
+
+        .progress-bar-success {
+            background: linear-gradient(90deg, #1f6e43 0%, #198754 100%) !important;
+        }
+
+        .progress-bar-info {
+            background: linear-gradient(90deg, #b29771 0%, #cbb596 100%) !important;
+        }
+
+        .desc-truncate {
+            max-width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .gallery-wrapper {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #ced4da;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .gallery-item:hover {
+            border-color: #b29771;
+            transform: scale(1.05);
+        }
+
+        .modal-content {
+            background-color: #ffffff !important;
+            color: #212529 !important;
+            border: 1px solid #b29771 !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+        }
+
+        .modal-header {
+            background-color: #f8f9fa !important;
+            border-bottom: 1px solid #dee2e6 !important;
+        }
+
+        .modal-footer {
+            border-top: 1px solid #dee2e6 !important;
+        }
+
+        .bg-light-custom {
+            background-color: #f8f9fa !important;
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/dashboard">
+            <i class="fa-solid fa-satellite-dish me-2" style="color:#cbb596;"></i>
+            NORVEX
+            <span class="badge text-dark" style="font-size:0.65rem; background-color:#cbb596 !important;">
+                BETA v1.0
+            </span>
+        </a>
+
+        <div class="d-flex align-items-center gap-3 text-white-50">
+            <span>👤 {{ username }}</span>
+            <span class="badge bg-success text-uppercase">{{ plan }}</span>
+            <button onclick="logoutUser()" class="btn btn-sm btn-outline-light rounded-pill">
+                Çıkış
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <div class="container my-5">
+        <div class="card border-0 rounded-4 p-4 mb-5">
+            <h5 class="fw-bold mb-3">
+                <i class="fa-solid fa-bolt text-beige-premium me-2"></i>
+                Dinamik AI SEO Tarayıcı Motoru
+            </h5>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Tedarikçi Shopify URL</label>
+                    <input type="url" class="form-control" id="form_site_url" value="https://addax.co.uk">
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">Ürün Limiti</label>
+                    <input type="number" class="form-control" id="form_limit" value="4" min="1">
+                </div>
+
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="button" id="btn_start" onclick="startDirectScan();" class="btn btn-premium w-100 fw-bold py-2">
+                        <i class="fa-solid fa-play me-2"></i>
+                        Taramayı Başlat
+                    </button>
+                </div>
+            </div>
+
+            <div id="progress_container" class="d-none mt-4 p-3 border rounded-3 bg-light-custom">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span id="progress_msg" class="fw-semibold text-dark-custom">
+                        <i class="fa-solid fa-spinner fa-spin me-2 text-beige-premium"></i>
+                        Motor hazırlanıyor...
+                    </span>
+                    <span id="progress_perc" class="badge btn-premium">0%</span>
+                </div>
+
+                <div class="progress">
+                    <div id="progress_bar" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-info" style="width:0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 rounded-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">
+                    <i class="fa-solid fa-list-check text-beige-premium me-2"></i>
+                    Canlı İşlenen Ürünler Havuzu
+                </h5>
+
+                <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25">
+                    <i class="fa-solid fa-circle me-1"></i>
+                    Canlı Senkronizasyon
+                </span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Görsel</th>
+                            <th>Orijinal Ürün Adı</th>
+                            <th>AI Optimize Başlık</th>
+                            <th>Ürün Açıklaması</th>
+                            <th>Giriş Fiyatı</th>
+                            <th>eBay Fiyatı</th>
+                            <th>Aksiyon</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="7" class="text-center py-4 text-muted-custom">
+                                Henüz işlenmiş ürün yok. Yukarıdan bir tarama başlatın.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow rounded-4">
+                <div class="modal-header border-0 rounded-top-4">
+                    <h5 class="modal-title fw-bold">
+                        <i class="fa-solid fa-circle-info text-beige-premium me-2"></i>
+                        Ürün Analiz Detayı
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-md-5 text-center border-end">
+                            <img id="modal_img" src="" class="rounded border shadow-sm w-100 mb-2" style="max-height:280px; object-fit:cover;">
+                            <div class="small text-muted-custom font-monospace mb-3" id="modal_id">ID: -</div>
+
+                            <label class="small text-dark-custom fw-bold text-uppercase d-block mb-1">
+                                Tüm Ürün Görselleri
+                            </label>
+                            <div id="modal_gallery" class="gallery-wrapper"></div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="mb-3">
+                                <label class="small text-muted-custom fw-bold text-uppercase d-block">
+                                    Orijinal Tedarikçi Adı
+                                </label>
+                                <span id="modal_orig_title" class="fw-semibold text-dark-custom">-</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="small text-muted-custom fw-bold text-uppercase d-block">
+                                    AI SEO Optimize Hedef Başlık
+                                </label>
+                                <span id="modal_ai_title" class="text-ai-green fw-bold" style="font-size:1.1rem;">-</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="small text-muted-custom fw-bold text-uppercase d-block">
+                                    Gerçek Ürün Açıklaması
+                                </label>
+                                <div id="modal_desc" class="p-3 bg-light-custom rounded-3 text-dark-custom overflow-auto" style="max-height:180px; font-size:0.9rem; line-height:1.5;">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary fw-semibold px-4 rounded-pill" data-bs-dismiss="modal">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/static/js/utils.js"></script>
+<script src="/static/js/products.js"></script>
+<script src="/static/js/scanner.js"></script>
+<script src="/static/js/modal.js"></script>
+<script src="/static/js/ebay.js"></script>
+<script src="/static/js/auth.js?v=2"></script>
+<script src="/static/js/dashboard.js"></script>
+
+
+</body>
+</html>

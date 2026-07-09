@@ -1,0 +1,222 @@
+:root {
+    --bg-start: #f7f5f0;
+    --bg-end: #ebecee;
+    --dark: #2d3138;
+    --dark-2: #1e2126;
+    --gold: #b29771;
+    --gold-light: #cbb596;
+    --gold-dark: #987d57;
+    --green: #1f6e43;
+    --border: #e2e4e8;
+    --muted: #6c757d;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    color: #212529;
+    font-family: "Segoe UI", sans-serif;
+    min-height: 100vh;
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--dark), var(--dark-2));
+    border-bottom: 3px solid #bc9f77;
+}
+
+.navbar-brand {
+    color: #f7f5f0 !important;
+}
+
+.card {
+    background: #ffffff !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+h5 {
+    color: var(--dark) !important;
+}
+
+label {
+    color: #495057 !important;
+}
+
+.text-dark-custom {
+    color: #212529 !important;
+}
+
+.text-muted-custom {
+    color: var(--muted) !important;
+}
+
+.text-ai-green {
+    color: var(--green) !important;
+}
+
+.text-beige-premium {
+    color: #9c8059 !important;
+}
+
+.btn-premium {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: #ffffff !important;
+    border: none;
+    transition: all 0.25s ease;
+}
+
+.btn-premium:hover {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(178, 151, 113, 0.3);
+}
+
+.btn-premium:disabled {
+    background: #d6d8db;
+    color: #868e96 !important;
+}
+
+.btn-outline-premium {
+    color: #9c8059 !important;
+    border-color: var(--gold) !important;
+    background: transparent;
+}
+
+.btn-outline-premium:hover {
+    background: rgba(178, 151, 113, 0.1) !important;
+    color: #796140 !important;
+    border-color: #9c8059 !important;
+}
+
+.form-control {
+    background: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    color: #212529 !important;
+}
+
+.form-control:focus {
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 0 0.25rem rgba(178, 151, 113, 0.15) !important;
+}
+
+.table {
+    color: #212529 !important;
+}
+
+.table-hover tbody tr:hover {
+    background: #f8f9fa !important;
+}
+
+.table-light {
+    background: #f1f3f5 !important;
+    color: var(--dark) !important;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table th,
+.table td {
+    border-color: #e9ecef !important;
+}
+
+.img-container {
+    width: 55px;
+    height: 55px;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background: #ffffff;
+}
+
+.product-thumb {
+    width: 55px !important;
+    height: 55px !important;
+    object-fit: cover;
+    display: block;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px;
+    background: #e9ecef;
+}
+
+.progress-bar-info {
+    background: linear-gradient(90deg, var(--gold), var(--gold-light)) !important;
+}
+
+.progress-bar-success {
+    background: linear-gradient(90deg, var(--green), #198754) !important;
+}
+
+.progress-bar-error {
+    background: linear-gradient(90deg, #ea868f, #dc3545) !important;
+}
+
+.desc-truncate {
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.gallery-wrapper {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.gallery-item:hover {
+    border-color: var(--gold);
+    transform: scale(1.05);
+}
+
+.modal-content {
+    background: #ffffff !important;
+    color: #212529 !important;
+    border: 1px solid var(--gold) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.modal-header {
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6 !important;
+}
+
+.bg-light-custom {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6;
+    padding: 12px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .desc-truncate {
+        max-width: 140px;
+    }
+}
