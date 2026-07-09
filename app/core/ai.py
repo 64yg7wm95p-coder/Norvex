@@ -3,7 +3,7 @@ from .product import UniversalProduct
 
 class AIEngine:
     """
-    Norvex AI motoru.
+    Xathes AI motoru.
 
     Şimdilik demo modda çalışır.
     Daha sonra OpenAI entegrasyonu burada yapılacak.

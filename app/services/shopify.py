@@ -8,7 +8,7 @@ import requests
 
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 NorvexScanner/1.0",
+    "User-Agent": "Mozilla/5.0 XathesScanner/1.0",
     "Accept": "application/json,text/html,*/*",
 }
 

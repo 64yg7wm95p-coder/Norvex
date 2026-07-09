@@ -20,7 +20,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Norvex API",
+    title="Xathes API",
     version="2.0.0",
     lifespan=lifespan,
     docs_url="/docs",
