@@ -96,9 +96,26 @@ def ebay_connect(
         if os.getenv("EBAY_ENV", "").lower() == "sandbox"
         else "https://auth.ebay.com"
     )
+    encoded_redirect_uri = quote(redirect_uri, safe="")
 
     encoded_redirect_uri = quote(redirect_uri, safe="")
-    encoded_scope = quote("https://api.ebay.com/oauth/api_scope", safe="")
+
+oauth_scopes = " ".join([
+    "https://api.ebay.com/oauth/api_scope",
+    "https://api.ebay.com/oauth/api_scope/sell.inventory",
+    "https://api.ebay.com/oauth/api_scope/sell.account",
+    "https://api.ebay.com/oauth/api_scope/sell.fulfillment",
+])
+
+encoded_scope = quote(oauth_scopes, safe="")
+
+url = (
+    f"{auth_base}/oauth2/authorize"
+    f"?client_id={client_id}"
+    "&response_type=code"
+    f"&redirect_uri={encoded_redirect_uri}"
+    f"&scope={encoded_scope}"
+)
 
     url = (
         f"{auth_base}/oauth2/authorize"
@@ -106,6 +123,7 @@ def ebay_connect(
         "&response_type=code"
         f"&redirect_uri={encoded_redirect_uri}"
         f"&scope={encoded_scope}"
+    )
     )
 
     return {

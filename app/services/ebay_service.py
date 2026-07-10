@@ -99,11 +99,16 @@ def refresh_access_token(
             "Content-Type": "application/x-www-form-urlencoded",
         },
         auth=(client_id, client_secret),
-        data={
-            "grant_type": "refresh_token",
-            "refresh_token": refresh_token,
-            "scope": "https://api.ebay.com/oauth/api_scope",
-        },
+        ,data={
+    "grant_type": "refresh_token",
+    "refresh_token": refresh_token,
+    "scope": " ".join([
+        "https://api.ebay.com/oauth/api_scope",
+        "https://api.ebay.com/oauth/api_scope/sell.inventory",
+        "https://api.ebay.com/oauth/api_scope/sell.account",
+        "https://api.ebay.com/oauth/api_scope/sell.fulfillment",
+    ]),
+    },
         timeout=30,
     )
 
