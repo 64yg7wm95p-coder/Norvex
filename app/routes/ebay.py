@@ -122,10 +122,19 @@ def ebay_callback(
 ):
     from ..services.ebay_service import exchange_code_for_token
 
+    # Query-string ayrıştırması sırasında "+" karakterleri
+    # boşluğa dönüşmüşse eBay authorization code'unu düzelt.
+    normalized_code = code.replace(" ", "+")
+
     exchange_code_for_token(
         current_user["id"],
-        code,
+        normalized_code,
     )
+
+    return {
+        "success": True,
+        "message": "eBay hesabı bağlandı.",
+    }
 
     return {
         "success": True,
