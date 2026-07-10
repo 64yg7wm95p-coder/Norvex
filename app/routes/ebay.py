@@ -211,14 +211,15 @@ def ebay_list(
     },
     "condition": "NEW",
     "product": {
-        "title": title,
-        "description": description,
-        "brand": "Unbranded",
-        "mpn": sku,
-        "aspects": {
-            "Colour": ["Black"]
-        },
+    "title": title,
+    "description": description,
+    "brand": "Unbranded",
+    "mpn": sku,
+    "aspects": {
+        "Department": ["Women"],
+        "Colour": ["Multicoloured"],
     },
+},
     "packageWeightAndSize": {
         "dimensions": {
             "height": 5,
