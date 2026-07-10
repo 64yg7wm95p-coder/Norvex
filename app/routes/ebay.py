@@ -220,6 +220,7 @@ def ebay_list(
         "Colour": ["Multicoloured"],
         "Style": ["Basic"],
         "Brand": ["Unbranded"],
+        "Size": ["One Size"],
     },
 },
     "packageWeightAndSize": {
