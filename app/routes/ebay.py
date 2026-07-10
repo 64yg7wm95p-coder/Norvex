@@ -218,6 +218,7 @@ def ebay_list(
     "aspects": {
         "Department": ["Women"],
         "Colour": ["Multicoloured"],
+        "Style": ["Basic"]
     },
 },
     "packageWeightAndSize": {
