@@ -99,7 +99,7 @@ def refresh_access_token(
             "Content-Type": "application/x-www-form-urlencoded",
         },
         auth=(client_id, client_secret),
-        ,data={
+        data={
     "grant_type": "refresh_token",
     "refresh_token": refresh_token,
     "scope": " ".join([
