@@ -204,31 +204,34 @@ def ebay_list(
         ]
 
     inventory_payload = {
-        "availability": {
-            "shipToLocationAvailability": {
-                "quantity": 1
-            }
+    "availability": {
+        "shipToLocationAvailability": {
+            "quantity": 1
+        }
+    },
+    "condition": "NEW",
+    "product": {
+        "title": title,
+        "description": description,
+        "brand": "Unbranded",
+        "mpn": sku,
+        "aspects": {
+            "Colour": ["Black"]
         },
-        "condition": "NEW",
-        "product": {
-            "title": title,
-            "description": description,
-            "brand": "Unbranded",
-            "mpn": sku,
+    },
+    "packageWeightAndSize": {
+        "dimensions": {
+            "height": 5,
+            "length": 20,
+            "width": 15,
+            "unit": "CENTIMETER",
         },
-        "packageWeightAndSize": {
-            "dimensions": {
-                "height": 5,
-                "length": 20,
-                "width": 15,
-                "unit": "CENTIMETER",
-            },
-            "weight": {
-                "value": 1,
-                "unit": "KILOGRAM",
-            },
+        "weight": {
+            "value": 1,
+            "unit": "KILOGRAM",
         },
-    }
+    },
+}
 
     if image_urls:
         inventory_payload["product"]["imageUrls"] = image_urls[:12]
